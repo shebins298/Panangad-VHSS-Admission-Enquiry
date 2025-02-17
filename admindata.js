@@ -1,29 +1,35 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Initialize Firebase Firestore
-  const db = firebase.firestore();
-  const auth = firebase.auth();
-
-  // Check if the user is authenticated and has the 'admin' role
-  auth.onAuthStateChanged((user) => {
+document.addEventListener("DOMContentLoaded", function () {
+  const adminContainer = document.querySelector(".admin-container");
+  const originalContent = adminContainer.innerHTML;
+  
+ firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-      // User is logged in, now check the 'admin' field in the user document
-      db.collection("users").doc(user.uid).get().then((doc) => {
-        if (doc.exists && doc.data().admin) {
-          // User is an admin, fetch the enquiries
-          fetchEnquiries();
+      console.log("User logged in:", user.uid);
+      const userRef = db.collection("user").doc(user.uid);
+      try {
+        const doc = await userRef.get();
+        if (!doc.exists || doc.data().admin !== true) {
+          console.warn("Not an admin or admin data missing:", doc.data());
+          await firebase.auth().signOut();
+          window.location.href = "login.html";
         } else {
-          // If not an admin, redirect them to another page (e.g., home page or login page)
-          window.location.replace("https://www.panangadvhss.com"); // Replace with your redirect URL
+          console.log("Admin verified. Loading panel...");
+          // Restore original admin panel content
+          adminContainer.innerHTML = originalContent;
+          attachSignOutListener();
+          fetchEnquiries();
         }
-      }).catch((error) => {
-        console.error("Error checking admin status: ", error);
-      });
+      } catch (error) {
+        console.error("Error verifying admin:", error);
+        await firebase.auth().signOut();
+        window.location.href = "login.html";
+      }
     } else {
-      // No user is logged in, redirect to login page
-      window.location.replace("https://www.panangadvhss.com/login"); // Replace with your login URL
+      console.warn("No user logged in.");
+      window.location.href = "login.html";
     }
   });
-
+  
   // Fetch and display all enquiries
   function fetchEnquiries() {
     db.collection("enquiries")
