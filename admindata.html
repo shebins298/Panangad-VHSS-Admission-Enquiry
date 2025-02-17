@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin - Enquiry Management</title>
-  <link rel="stylesheet" href="admindata.css" />
-   <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore-compat.js"></script>
-  <!-- Firebase Config -->
-  <script src="firebase-config.js"></script>
-  <!-- Admin Script -->
-  <script src="admindata.js"></script>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Admin - Manage Enquiries</h1>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Data - Enquiries</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Admin: Enquiries Management</h1>
+      </header>
 
-    <div class="enquiries-list">
-      <h2>All Enquiries</h2>
-      <table id="enquiriesTable">
-        <thead>
-          <tr>
-            <th>Student Name</th>
-            <th>Class Applying For</th>
-            <th>Parent's Name</th>
-            <th>Phone Number</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Enquiries will be listed here -->
-        </tbody>
-      </table>
+      <div id="loadingMessage">
+        <p>Loading enquiries...</p>
+      </div>
+
+      <div id="enquiriesList">
+        <!-- Data will be inserted here -->
+      </div>
+
+      <footer>
+        <p>
+          Visit our website: 
+          <a href="https://www.panangadvhss.com" target="_blank">www.panangadvhss.com</a>
+        </p>
+      </footer>
     </div>
 
-    <footer>
-      <p>Visit our website: <a href="https://www.panangadvhss.com" target="_blank">www.panangadvhss.com</a></p>
-    </footer>
-  </div>
+    <!-- Firebase Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore-compat.js"></script>
 
- 
-</body>
+    <!-- Your Firebase config -->
+    <script src="firebase-config.js"></script>
+
+    <!-- Admin data management script -->
+    <script src="admindata.js"></script>
+  </body>
 </html>
