@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Enquiry Management</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Admin - Manage Enquiries</h1>
+    </header>
+
+    <div class="enquiries-list">
+      <h2>All Enquiries</h2>
+      <table id="enquiriesTable">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Class Applying For</th>
+            <th>Parent's Name</th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Enquiries will be listed here -->
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      <p>Visit our website: <a href="https://www.panangadvhss.com" target="_blank">www.panangadvhss.com</a></p>
+    </footer>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
