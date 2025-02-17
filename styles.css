@@ -1,0 +1,146 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #E3F2FD;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Header (Improved Design) */
+header {
+    background: linear-gradient(135deg, #1565C0, #1E88E5);
+    color: white;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 14px;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* Form */
+.form-container {
+    padding: 20px;
+    text-align: left;
+    /* Align labels properly */
+}
+
+/* Improved Label Alignment */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1565C0;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #f9f9f9;
+}
+
+/* Button */
+button {
+    background: linear-gradient(135deg, #0D47A1, #42A5F5);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0B3D91, #1E88E5);
+    transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: gray;
+}
+
+footer a {
+    color: #0D47A1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    /* Adjust size to a balanced width */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto 10px;
+    /* Center and add bottom spacing */
+}
+
+/* Tagline Styling - Smaller & Elegant */
+.tagline {
+    font-size: 14px; /* Reduced size */
+    font-style: italic;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85); /* Soft white */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.8px; /* Slight spacing for readability */
+    margin-top: 5px;
+}
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="login.css" />
+  <!-- Firebase libraries -->
+  <!-- Firebase App (the core Firebase SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app-compat.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"></script>
+  <!-- Firebase Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="login.js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Admin Panel Login</h1>
+    <button id="googleSignInBtn">Sign in with Google</button>
+    <p id="message"></p>
+    <!-- Loading indicator (hidden by default) -->
+    <div id="loading">Loading...</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panangad VHSS School Admission Enquiry</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="school logo.png" alt="School Logo" class="logo" />
+        <h1>Welcome to Panangad VHSS</h1>
+        <p class="tagline">Setting a New Dimension to Education</p>
+      </header>
+
+      <div class="form-container">
+        <h2>Admission Enquiry</h2>
+        <form id="enquiryForm">
+          <label for="name">Student's Name</label>
+          <input type="text" id="name" placeholder="Enter full name" required />
+
+          <label for="class">Class Applying For</label>
+          <select id="class" required>
+            <option value="">-- Select Class --</option>
+            <option>LKG</option>
+            <option>UKG</option>
+            <option>Class 1</option>
+            <option>Class 2</option>
+            <option>Class 3</option>
+            <option>Class 4</option>
+            <option>Class 5</option>
+            <option>Class 6</option>
+            <option>Class 7</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+            <option>Class 11</option>
+          </select>
+
+          <label for="parent">Parent's Name</label>
+          <input type="text" id="parent" placeholder="Enter parent's name" required />
+
+          <label for="phone">Parent's Contact Number</label>
+          <input type="text" id="phone" placeholder="Enter phone number" required />
+
+          <button type="submit">Submit Enquiry</button>
+        </form>
+      </div>
+
+      <footer>
+        <p>
+          Visit our website: 
+          <a href="https://www.panangadvhss.com" target="_blank">www.panangadvhss.com</a>
+        </p>
+        <p>
+          Follow us: 
+          <a href="https://www.facebook.com/panangadvhss" target="_blank">Facebook</a> | 
+          <a href="https://www.instagram.com/panangadvhss" target="_blank">Instagram</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Firebase Compat Libraries -->
+<script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore-compat.js"></script>
+    <!-- Your Firebase configuration -->
+    <script src="firebase-config.js"></script>
+    <!-- Your custom script -->
+    <script src="script.js"></script>
+  </body>
+</html>

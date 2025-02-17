@@ -1,0 +1,148 @@
+/* admin.css */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f2f2f7;
+  color: #1c1c1e;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Admin Panel Container */
+.admin-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+.admin-container h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #007aff;
+  font-weight: 600;
+}
+.admin-container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #636366;
+}
+
+/* Sign Out Button */
+#signOutBtn {
+  background: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 18px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 30px;
+}
+#signOutBtn:hover {
+  background: #005bb5;
+}
+
+/* Enquiries Section */
+#enquiriesSection {
+  margin-top: 20px;
+  text-align: left;
+}
+#enquiriesSection h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1c1c1e;
+}
+
+/* Table Wrapper for horizontal scrolling on small screens */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+}
+
+/* Table Styling */
+#enquiriesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  min-width: 600px; /* Adjust as needed */
+}
+#enquiriesTable thead {
+  background: #f9f9f9;
+}
+#enquiriesTable thead th {
+  padding: 16px;
+  font-size: 16px;
+  color: #1c1c1e;
+  border-bottom: 2px solid #d1d1d6;
+  text-align: left;
+  white-space: nowrap;
+}
+#enquiriesTable tbody td {
+  padding: 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #e5e5ea;
+  white-space: nowrap;
+  color: #1c1c1e;
+}
+
+/* Zebra Striping */
+#enquiriesTable tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Hover Effect */
+#enquiriesTable tbody tr:hover {
+  background: #e5e5ea;
+  transition: background-color 0.3s ease;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+  .admin-container {
+    width: 95%;            /* Allow container to use more of the viewport */
+    padding: 20px;
+    margin: 10px auto;     /* Center the container with auto left/right margins */
+  }
+  .admin-container h1 {
+    font-size: 24px;
+  }
+  .admin-container p {
+    font-size: 16px;
+  }
+  #signOutBtn {
+    font-size: 16px;
+    padding: 12px;
+  }
+  #enquiriesSection h2 {
+    font-size: 20px;
+  }
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;              /* Enable horizontal scrolling if table overflows */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    margin: 0 auto;
+  }
+  #enquiriesTable {
+    min-width: 100%;   /* Allow table to use the full width of its container */
+  }
+  #enquiriesTable thead th,
+  #enquiriesTable tbody td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+}

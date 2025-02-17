@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="admin.css" />
+  <!-- Firebase libraries (Compat versions) -->
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <div class="admin-container">
+    <h1>Admin Panel</h1>
+    <p>Welcome, Admin!</p>
+    <button id="signOutBtn">Sign Out</button>
+
+    <!-- Enquiries Section -->
+    <section id="enquiriesSection">
+      <h2>Enquiries</h2>
+      <div class="table-wrapper">
+        <table id="enquiriesTable">
+          <thead>
+            <tr>
+              <th>Student's Name</th>
+              <th>Class</th>
+              <th>Parent's Name</th>
+              <th>Contact</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data rows will be injected here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
