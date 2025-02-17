@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Initialize Firebase Firestore and Authentication
+  // Initialize Firebase Firestore
   const db = firebase.firestore();
   const auth = firebase.auth();
 
@@ -30,24 +30,26 @@ document.addEventListener('DOMContentLoaded', function () {
       .get()
       .then((querySnapshot) => {
         const tableBody = document.getElementById("enquiriesTable").getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = ""; // Clear the table before adding new data
+        if (tableBody) {
+          tableBody.innerHTML = ""; // Clear the table before adding new data
 
-        querySnapshot.forEach((doc) => {
-          const enquiry = doc.data();
-          const row = tableBody.insertRow();
-          row.setAttribute("data-id", doc.id); // Store document ID in the row
+          querySnapshot.forEach((doc) => {
+            const enquiry = doc.data();
+            const row = tableBody.insertRow();
+            row.setAttribute("data-id", doc.id); // Store document ID in the row
 
-          row.innerHTML = `
-            <td>${enquiry.studentName}</td>
-            <td>${enquiry.classApplying}</td>
-            <td>${enquiry.parentName}</td>
-            <td>${enquiry.phone}</td>
-            <td>
-              <button class="editBtn" onclick="editEnquiry('${doc.id}')">Edit</button>
-              <button class="deleteBtn" onclick="deleteEnquiry('${doc.id}')">Delete</button>
-            </td>
-          `;
-        });
+            row.innerHTML = `
+              <td>${enquiry.studentName}</td>
+              <td>${enquiry.classApplying}</td>
+              <td>${enquiry.parentName}</td>
+              <td>${enquiry.phone}</td>
+              <td>
+                <button class="editBtn" onclick="editEnquiry('${doc.id}')">Edit</button>
+                <button class="deleteBtn" onclick="deleteEnquiry('${doc.id}')">Delete</button>
+              </td>
+            `;
+          });
+        }
       })
       .catch((error) => {
         console.error("Error getting documents: ", error);
@@ -99,5 +101,26 @@ document.addEventListener('DOMContentLoaded', function () {
           console.error("Error deleting document: ", error);
         });
     }
+  }
+
+  // Firebase Authentication - Login/Logout Handlers (Optional)
+  function login() {
+    const phoneNumber = prompt("Enter phone number for login:");
+    const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+
+    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+      .then((confirmationResult) => {
+        const code = prompt("Enter the verification code sent to your phone:");
+        return confirmationResult.confirm(code);
+      })
+      .catch((error) => {
+        console.error("Error during login:", error);
+      });
+  }
+
+  function logout() {
+    firebase.auth().signOut().then(() => {
+      window.location.replace("https://www.panangadvhss.com/login"); // Redirect to login page
+    });
   }
 });
