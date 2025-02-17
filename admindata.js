@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Initialize Firebase Firestore
-  //const db = firebase.firestore();
- // const auth = firebase.auth();
+  const db = firebase.firestore();
+  const auth = firebase.auth();
 
   // Check if the user is authenticated and has the 'admin' role
   auth.onAuthStateChanged((user) => {
